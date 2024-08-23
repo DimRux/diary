@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  min-height: 58px;
+}
+
+.span {
+  margin-left: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #747576;
+}
+
+.link {
+  color: #747576;
+  text-underline-offset: 3px;
+}
