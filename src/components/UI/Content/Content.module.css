@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 654px;
+  height: calc(100vh - 58px - 120px);
 }
 
 .container {

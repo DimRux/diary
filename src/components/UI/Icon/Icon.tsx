@@ -1,16 +1,17 @@
 import { SVGProps } from 'react';
 import { Balloon, Edit } from "./";
 
-type IconName = 'balloon' | 'edit';
 
 interface IconProps extends SVGProps<SVGSVGElement> {
   icon: IconName;
 }
 
-const icons: { [key in IconName]: React.FC<SVGProps<SVGSVGElement>> } = {
+const icons = {
   balloon: Balloon,
   edit: Edit,
-};
+} as const;
+
+type IconName = keyof typeof icons;
 
 const Icon = ({ icon, ...props }: IconProps) => {
   const SvgComponent = icons[icon];
