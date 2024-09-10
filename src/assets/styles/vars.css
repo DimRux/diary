@@ -1,0 +1,9 @@
+:root {
+  --text-color-black: #1e2022;
+  --text-color-grey: #747576;
+
+  --box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  --linear-gradient: linear-gradient(137deg, #fff76a 0%, #ffce89 100%);
+  --main-background: #fdfcf3;
+  --button-background: #ffe55e;
+}

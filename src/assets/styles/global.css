@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 24px;
+  min-width: 1280px;
+  color: #1E2022;
+  font-variant-numeric: lining-nums;
+  background: #FDFCF3 center/cover no-repeat fixed;
+}
+
+#root {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
