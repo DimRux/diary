@@ -1,7 +1,7 @@
 import { Button } from "@ui/.";
-import styles from './Main.module.css';
+import styles from './Content.module.css';
 
-export const Main = () => {
+export const Content = () => {
   return (
     <main className={styles.main}>
       <div className={styles.container}>

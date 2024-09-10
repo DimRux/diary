@@ -1,11 +1,11 @@
 import styles from './App.module.css';
-import { Header, Main, Footer } from '@components/index';
+import { Header, Content, Footer } from '@components/index';
 
 export const App = () => {
   return (
     <div className={styles.container}>
       <Header />
-      <Main />
+      <Content />
       <Footer />
     </div>
   );
