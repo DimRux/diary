@@ -8,10 +8,10 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  color: #747576;
+  color: var(--text-color-grey);
 }
 
 .link {
-  color: #747576;
+  color: var(--text-color-grey);
   text-underline-offset: 3px;
 }

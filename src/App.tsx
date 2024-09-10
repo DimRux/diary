@@ -1,16 +1,12 @@
 import styles from './App.module.css';
-import { Content } from './components/UI/Content/Content';
-import { Footer } from './components/UI/Footer/Footer';
-import { Header } from './components/UI/Header/Header';
+import { Header, Main, Footer } from '@components/index';
 
-function App() {
+export const App = () => {
   return (
     <div className={styles.container}>
       <Header />
-      <Content />
+      <Main />
       <Footer />
     </div>
   );
-}
-
-export default App
+};

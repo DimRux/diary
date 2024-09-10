@@ -1,5 +1,4 @@
-import { Button } from "../Button/Button";
-import { Logo } from "../Logo/Logo";
+import { Button, Logo } from '@ui/.';
 import styles from './Header.module.css';
 
 export const Header = () => {

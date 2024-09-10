@@ -1,26 +1,26 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: var(--gap-logo);
   text-decoration: none;
   color: inherit;
 }
 
 .button {
   display: flex;
-  flex-direction: row;
   align-items: center;
   padding: 12px;
-  gap: 10px;
+  gap: var(--gap-10);
 
-  background: linear-gradient(137.43deg, #FFF76A 31.13%, #FFCE89 100%);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  background: var(--linear-gradient-logo);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--radius-logo-button);
 }
 
 .title {
   font-weight: 900;
   font-size: 34px;
   line-height: 60px;
-  color: #1E2022;
+  color: var(--text-color-black);
+  letter-spacing: 0.04em;
 }

@@ -1,4 +1,4 @@
-import Icon from "../Icon/Icon";
+import { Icon } from '@ui/.';
 import styles from './Button.module.css';
 
 type IconName = 'balloon' | 'edit';

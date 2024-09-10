@@ -13,9 +13,7 @@ const icons = {
 
 type IconName = keyof typeof icons;
 
-const Icon = ({ icon, ...props }: IconProps) => {
+export const Icon = ({ icon, ...props }: IconProps) => {
   const SvgComponent = icons[icon];
   return SvgComponent ? <SvgComponent {...props} /> : null;
 };
-
-export default Icon;

@@ -1,9 +1,17 @@
 :root {
+  --main-background: #fdfcf3;
+  --button-background: #ffe55e;
   --text-color-black: #1e2022;
   --text-color-grey: #747576;
 
+  --radius-button: 10px;
+  --radius-logo-button: 12px;
+
   --box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   --linear-gradient: linear-gradient(137deg, #fff76a 0%, #ffce89 100%);
-  --main-background: #fdfcf3;
-  --button-background: #ffe55e;
+  --linear-gradient-logo: linear-gradient(137.43deg, #FFF76A 31.13%, #FFCE89 100%);
+
+  --gap-10: 10px;
+  --gap-main: 36px;
+  --gap-logo: 16px;
 }

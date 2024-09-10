@@ -10,12 +10,12 @@
   justify-content: center;
   align-items: center;
   padding: 18px;
-  gap: 10px;
+  gap: var(--gap-10);
 
   width: 60px;
   height: 60px;
 
-  background: #FFE55E;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  background: var(--button-background);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--radius-button);
 }

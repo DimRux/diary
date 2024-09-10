@@ -3,26 +3,26 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 58px - 120px);
+  min-height: 650px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: var(--gap-main);
 }
 
 .button {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  
   align-items: center;
-  padding: 18px 20px;
-  gap: 10px;
+  padding: 18px 34.5px;
+  gap: var(--gap-10);
 
-  width: 300px;
+  
   height: 60px;
 
-  background: #FFE55E;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  background: var(--button-background);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--radius-button);
 }
