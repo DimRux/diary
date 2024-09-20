@@ -19,3 +19,7 @@
   box-shadow: var(--box-shadow);
   border-radius: var(--radius-button);
 }
+
+.buttonLogo {
+  background: #FDFCF3;
+}
