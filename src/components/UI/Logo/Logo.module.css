@@ -1,26 +1,20 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: var(--gap-logo);
+  gap: 6px;
   text-decoration: none;
   color: inherit;
-}
-
-.button {
-  display: flex;
-  align-items: center;
-  padding: 12px;
-  gap: var(--gap-10);
-
-  background: var(--linear-gradient-logo);
-  box-shadow: var(--box-shadow);
-  border-radius: var(--radius-logo-button);
+  height: 60px;
+  margin-left: -10px;
 }
 
 .title {
+  font-family: 'Lato';
+  font-style: normal;
   font-weight: 900;
   font-size: 34px;
   line-height: 60px;
   color: var(--text-color-black);
   letter-spacing: 0.04em;
+
 }

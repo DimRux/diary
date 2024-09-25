@@ -9,6 +9,7 @@ import { Icon } from "@components/UI";
 import { Calendar } from "@components/Calendar/Calendar";
 
 export const AddNote: React.FC = () => {
+
   return (
     <main>
       <div className={styles.block}>

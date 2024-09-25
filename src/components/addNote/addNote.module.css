@@ -20,14 +20,14 @@
   width: 100%;
   height: 60px;
 
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
 
   font-weight: 300;
   font-size: 18px;
   line-height: 24px;
-  color: #1E2022;
+  color: #1e2022;
 }
 
 .inputTag {
@@ -39,14 +39,14 @@
   width: 100%;
   height: 60px;
 
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
 
   font-weight: 300;
   font-size: 18px;
   line-height: 24px;
-  color: #1E2022;
+  color: #1e2022;
 }
 
 .inputHeader::placeholder,
@@ -55,6 +55,16 @@
   font-size: 18px;
   line-height: 24px;
   color: #747576;
+}
+
+.inputHeader:focus,
+.inputTag:focus {
+  border: 1px solid #cacacb;
+}
+
+.inputHeader:hover,
+.inputTag:hover {
+  border: 1px solid #e0e0e0;
 }
 
 .content {
@@ -72,7 +82,7 @@
   width: 100%;
   height: 340px;
 
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 12px;
@@ -81,7 +91,25 @@
   font-weight: 300;
   font-size: 18px;
   line-height: 24px;
-  color: #1E2022;
+  color: #1e2022;
+}
+
+.textarea::placeholder {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+
+  color: #747576;
+}
+
+.textarea:hover {
+  border: 1px solid #e0e0e0;
+}
+
+.textarea:focus {
+  border: 1px solid #e0e0e0;
 }
 
 .settings {
@@ -99,14 +127,14 @@
   width: 260px;
   height: 60px;
 
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
 
   font-weight: 300;
   font-size: 18px;
   line-height: 24px;
-  color: #1E2022;
+  color: #1e2022;
 }
 
 .wrapper {
@@ -146,7 +174,7 @@
 .buttons {
   display: flex;
   gap: 20px;
-  padding: 40px 40px 94px 40px;
+  padding: 20px 40px 94px 40px;
 }
 
 .imgWrapper {

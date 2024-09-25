@@ -12,7 +12,7 @@
   width: 100px;
   height: 60px;
 
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   font-size: 18px;
@@ -20,6 +20,14 @@
 
 .buttonEmoji:hover svg path {
   fill: #747576;
+}
+
+.buttonEmojiActive {
+  border: 1px solid #cacacb;
+}
+
+.buttonEmojiActive:hover svg path {
+  fill: #494b4c;
 }
 
 .container {
@@ -36,9 +44,9 @@
   width: 304px;
   height: 206px;
 
-  background: #FFFFFF;
-  border: 1px solid #CACACB;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  background: #ffffff;
+  border: 1px solid #cacacb;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
 }
 
@@ -47,7 +55,7 @@
 }
 
 .emoji path {
-  fill: #9FA0A1;
+  fill: #9fa0a1;
 }
 
 .emojiContainer {
@@ -67,16 +75,16 @@
   width: 40px;
   height: 40px;
 
-  background: #F1F1F1;
+  background: #f1f1f1;
   border-radius: 12px;
 }
 
 .emojiButton:hover {
-  border: 1px solid #EBD14A;
+  border: 1px solid #ebd14a;
 }
 
 .activeEmoji {
-  border: 1px solid #D2AA1B;
+  border: 1px solid #d2aa1b;
 }
 
 .buttonBackEmoji {
@@ -87,12 +95,12 @@
 
   width: 129px;
   height: 36px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  color: #9FA0A1;
+  color: #9fa0a1;
 }

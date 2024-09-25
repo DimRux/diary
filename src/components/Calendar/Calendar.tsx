@@ -1,16 +1,20 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from './Calendar.module.css'
 import { Icon } from "@components/UI";
 
 export const Calendar: React.FC = () => {
+  const [date, setDate] = useState(new Date());
+
   return (
-    <div className={styles.wrapper}>
+    <label htmlFor="calendar" className={styles.wrapper}>
       <input
         type='date'
-        value="2023-11-14"
+        id='calendar'
+        value={date.toISOString().split('T')[0]}
         className={styles.inputCalendar}
+        onChange={(e) => setDate(new Date(e.target.value))}
       />
       <Icon icon='calendar' className={styles.calendarIcon} />
-    </div>
+    </label>
   );
 };
