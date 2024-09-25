@@ -1,13 +1,19 @@
 import { Button } from "@ui/.";
 import styles from './Content.module.css';
-import { Dispatch, SetStateAction } from 'react';
+import { useContext } from "react";
+import { PageContext } from "@context/pageContext";
 
-interface ContentProps {
-  setJournalStarted: Dispatch<SetStateAction<boolean>>;
-}
 
   
-export const Content: React.FC<ContentProps> = ({ setJournalStarted }) => {
+export const Content: React.FC = () => {
+  const context = useContext(PageContext);
+    
+    if (!context) {
+        throw new Error('App must be used within a PageProvider');
+    }
+    
+    const { setJournalStarted } = context;
+
   return (
     <main className={styles.main}>
       <div className={styles.container}>

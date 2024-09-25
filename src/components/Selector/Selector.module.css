@@ -18,6 +18,10 @@
   font-size: 18px;
 }
 
+.buttonEmoji:hover {
+  border: 1px solid #E0E0E0;
+}
+
 .buttonEmoji:hover svg path {
   fill: #747576;
 }
@@ -26,7 +30,7 @@
   border: 1px solid #cacacb;
 }
 
-.buttonEmojiActive:hover svg path {
+.buttonEmojiActive svg path {
   fill: #494b4c;
 }
 
@@ -63,6 +67,7 @@
   flex-wrap: wrap;
   gap: 8px;
   width: 280px;
+  list-style-type: none;
 }
 
 .emojiButton {

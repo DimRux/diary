@@ -5,6 +5,23 @@
 input::-webkit-calendar-picker-indicator {
   opacity: 0;
   margin-left: 77px;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+input::-moz-calendar-picker-indicator {
+  opacity: 0;
+  margin-left: 77px;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
   z-index: 10;
   cursor: pointer;
 }
@@ -14,7 +31,7 @@ input::-webkit-calendar-picker-indicator {
   align-items: center;
   padding: 10px 18px;
   gap: 18px;
-
+  position: relative;
   width: 260px;
   height: 60px;
 
@@ -25,7 +42,7 @@ input::-webkit-calendar-picker-indicator {
   font-weight: 300;
   font-size: 18px;
   line-height: 24px;
-  color: #1E2022;   
+  color: #1E2022;
 }
 
 .calendarIcon {

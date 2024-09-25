@@ -1,13 +1,17 @@
 import { Button, Logo } from '@ui/.';
 import styles from './Header.module.css';
-import React, { Dispatch, SetStateAction } from 'react';
+import React, { useContext } from 'react';
+import { PageContext } from '@context/pageContext';
 
-interface HeaderProps {
-  journalStarted: boolean,
-  setJournalStarted: Dispatch<SetStateAction<boolean>>,
-}
+export const Header: React.FC = () => {
+  const context = useContext(PageContext);
+    
+    if (!context) {
+        throw new Error('App must be used within a PageProvider');
+    }
+    
+    const { journalStarted, setJournalStarted } = context;
 
-export const Header: React.FC<HeaderProps> = ({ journalStarted, setJournalStarted }) => {
   return (
     <header className={styles.header}>
       <button onClick={() => setJournalStarted(false)} className={styles.buttonLogo}><Logo /></button>

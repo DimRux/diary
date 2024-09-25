@@ -1,3 +1,8 @@
+.main {
+  height: calc(100vh - 58px - 120px);
+  min-height: 654px;
+}
+
 .block {
   padding: 20px 40px;
   display: flex;

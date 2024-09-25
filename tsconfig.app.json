@@ -27,7 +27,9 @@
       "@components/*": ["./src/components/*"],
       "@ui/*": ["./src/components/UI/*"],
       "@utils/*": ["./src/utils/*"],
-      "@hooks/*": ["./src/hooks/*"]
+      "@hooks/*": ["./src/hooks/*"],
+      "@data/*": ["./src/data/*"],
+      "@context/*": ["./src/context/*"]
     }
   },
   "include": ["src"]
