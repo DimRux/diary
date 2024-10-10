@@ -6,14 +6,14 @@ import { clsx } from "@utils/clsx";
 import { arrEmoji } from "@data/arrEmoji";
 
 export const Selector: React.FC = () => {
-  const [emoji, setEmoji] = useState(18);
+  const [emoji, setEmoji] = useState(-1);
   const [isOpenEmojis, setIsOpenEmojis] = useState(false);
   const ref = useOutsideClick<HTMLButtonElement>(() => setIsOpenEmojis(false));
 
   return (
     <div className={styles.selector}>
       <button type="button" ref={ref} className={clsx(styles.buttonEmoji, isOpenEmojis && styles.buttonEmojiActive)} onClick={() => setIsOpenEmojis(prevState => !prevState)}>
-        {emoji === 18 ? <Icon icon='emoji' className={styles.emoji} /> : arrEmoji[emoji]}
+        {emoji === -1 ? <Icon icon='emoji' className={styles.emoji} /> : arrEmoji[emoji]}
         <Icon icon="chevron" className={isOpenEmojis ? styles.chevron : ''} />
       </button>
       {isOpenEmojis && (
@@ -23,13 +23,11 @@ export const Selector: React.FC = () => {
               <li key={index} ><button onClick={() => setEmoji(index)} className={clsx(styles.emojiButton, emoji === index && styles.activeEmoji)}>
                 {element}
               </button></li>)}
-            <li>
-              <button type="button" onClick={() => setEmoji(18)} className={styles.buttonBackEmoji}>
-                <Icon icon='clean' />
-                <span>Убрать эмоцию</span>
-              </button>
-            </li>
           </ul>
+          <button type="button" onClick={() => setEmoji(-1)} className={styles.buttonBackEmoji}>
+            <Icon icon='clean' className={clsx(emoji === -1 && styles.icon)} />
+            <span className={clsx(emoji === -1 && styles.span)} >Убрать эмоцию</span>
+          </button>
         </div>
       )}
     </div>

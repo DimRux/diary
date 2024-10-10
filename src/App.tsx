@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import styles from './App.module.css';
 import { Header, Content, Footer, AddNote } from '@components/index';
 import { PageContext } from '@context/pageContext';
+import styles from './App.module.css';
 
 export const App = () => {
   const context = useContext(PageContext);

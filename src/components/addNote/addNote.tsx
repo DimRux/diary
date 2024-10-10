@@ -1,12 +1,7 @@
 import React from "react"
-import { Input } from "@components/Input/Input";
-import { Selector } from "@components/Selector/Selector";
+import { Textarea, Input, Button, Icon } from "@ui/."
+import { Selector, Image, Calendar } from "@components/.";
 import styles from './addNote.module.css';
-import { Textarea } from "@components/Textarea/Textarea";
-import { Image } from "@components/Image/Image";
-import { Button } from "@components/UI";
-import { Icon } from "@components/UI";
-import { Calendar } from "@components/Calendar/Calendar";
 
 export const AddNote: React.FC = () => {
 
@@ -24,7 +19,7 @@ export const AddNote: React.FC = () => {
               <Selector />
             </div>
             <div className={styles.imgWrapper}>
-              <Image width={380} height={240} />
+              <Image />
               <Icon icon='image' className={styles.iconImg} />
             </div>
             <Input placeholder="#теги" className={styles.inputTag} />

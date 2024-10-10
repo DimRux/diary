@@ -27,6 +27,7 @@
 
   background: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent;
   border-radius: 12px;
 
   font-weight: 300;
@@ -46,6 +47,7 @@
 
   background: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent;
   border-radius: 12px;
 
   font-weight: 300;
@@ -72,6 +74,11 @@
   border: 1px solid #e0e0e0;
 }
 
+.inputHeader:active,
+.inputTag:active {
+  border: 1px solid #CACACB;
+}
+
 .content {
   flex-grow: 1;
   width: 65%;
@@ -89,10 +96,11 @@
 
   background: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border: none;
+  border: 1px solid transparent;
   border-radius: 12px;
   resize: none;
 
+  font-family: "Lato", sans-serif;
   font-weight: 300;
   font-size: 18px;
   line-height: 24px;
@@ -109,11 +117,15 @@
   color: #747576;
 }
 
-.textarea:hover {
+.textarea:focus {
   border: 1px solid #e0e0e0;
 }
 
-.textarea:focus {
+.textarea:active {
+  border: 1px solid #CACACB;
+}
+
+.textarea:hover {
   border: 1px solid #e0e0e0;
 }
 
@@ -191,5 +203,5 @@
 .iconImg {
   position: absolute;
   left: 45%;
-  top: 45%;
+  top: 42%;
 }
