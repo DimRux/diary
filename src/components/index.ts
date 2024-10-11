@@ -5,3 +5,4 @@ export * from '@components/addNote/addNote';
 export * from '@components/Calendar/Calendar';
 export * from '@components/Image/Image';
 export * from '@components/Selector/Selector';
+export * from '@components/tagSelector/TagSelector';

@@ -1,0 +1,82 @@
+{
+  "tags": [
+    {
+      "id": 1,
+      "name": "Личное",
+      "description": "Личные мысли и чувства",
+      "isActive": false
+    },
+    {
+      "id": 2,
+      "name": "Работа",
+      "description": "Работа и проекты",
+      "isActive": false
+    },
+    {
+      "id": 3,
+      "name": "Путешествия",
+      "description": "Путешествия и приключения",
+      "isActive": false
+    },
+    {
+      "id": 4,
+      "name": "Еда",
+      "description": "Кулинарные приключения и рецепты",
+      "isActive": false
+    },
+    {
+      "id": 5,
+      "name": "Фитнес",
+      "description": "Цели фитнеса и тренировки",
+      "isActive": false
+    },
+    {
+      "id": 6,
+      "name": "Хобби",
+      "description": "Хобби и творческие занятия",
+      "isActive": false
+    },
+    {
+      "id": 7,
+      "name": "Отношения",
+      "description": "Отношения и социальные связи",
+      "isActive": false
+    },
+    {
+      "id": 8,
+      "name": "Обучение",
+      "description": "Обучение и личностный рост",
+      "isActive": false
+    },
+    {
+      "id": 9,
+      "name": "Цели",
+      "description": "Краткосрочные и долгосрочные цели",
+      "isActive": false
+    },
+    {
+      "id": 10,
+      "name": "Размышления",
+      "description": "Размышления и инсайты",
+      "isActive": false
+    },
+    {
+      "id": 11,
+      "name": "Хобби2",
+      "description": "Хобби и творческие занятия",
+      "isActive": false
+    },
+    {
+      "id": 12,
+      "name": "Хобби3",
+      "description": "Хобби и творческие занятия",
+      "isActive": false
+    },
+    {
+      "id": 13,
+      "name": "Хобби4",
+      "description": "Хобби и творческие занятия",
+      "isActive": false
+    }
+  ]
+}
