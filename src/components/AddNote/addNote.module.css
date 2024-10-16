@@ -1,5 +1,4 @@
 .main {
-  height: calc(100vh - 58px - 120px);
   min-height: 654px;
 }
 
@@ -34,6 +33,8 @@
   font-size: 18px;
   line-height: 24px;
   color: #1e2022;
+
+  flex-shrink: 0;
 }
 
 .inputHeader::placeholder {
@@ -45,14 +46,17 @@
 
 .inputHeader:focus {
   border: 1px solid #cacacb;
+  transition: border 0.3s ease;
 }
 
 .inputHeader:hover {
   border: 1px solid #e0e0e0;
+  transition: border 0.3s ease;
 }
 
 .inputHeader:active {
   border: 1px solid #CACACB;
+  transition: border 0.3s ease;
 }
 
 .content {
@@ -98,14 +102,17 @@
 
 .textarea:focus {
   border: 1px solid #e0e0e0;
+  transition: border 0.3s ease;
 }
 
 .textarea:active {
   border: 1px solid #CACACB;
+  transition: border 0.3s ease;
 }
 
 .textarea:hover {
   border: 1px solid #e0e0e0;
+  transition: border 0.3s ease;
 }
 
 .settings {

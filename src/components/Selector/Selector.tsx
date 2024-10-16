@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import styles from './Selector.module.css'
 import { Icon } from "@components/UI";
 import { useOutsideClick } from "@hooks/useOutsideClick";
 import { clsx } from "@utils/clsx";
 import { arrEmoji } from "@data/arrEmoji";
+import styles from './Selector.module.css'
 
 export const Selector: React.FC = () => {
   const [emoji, setEmoji] = useState(-1);

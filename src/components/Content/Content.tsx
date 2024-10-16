@@ -1,8 +1,7 @@
 import { Button } from "@ui/.";
-import styles from './Content.module.css';
 import { useContext } from "react";
 import { PageContext } from "@context/pageContext";
-
+import styles from './Content.module.css';
 
   
 export const Content: React.FC = () => {

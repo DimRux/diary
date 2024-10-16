@@ -1,82 +1,43 @@
 {
   "tags": [
     {
-      "id": 1,
-      "name": "Личное",
-      "description": "Личные мысли и чувства",
-      "isActive": false
+      "name": "Личное"
     },
     {
-      "id": 2,
-      "name": "Работа",
-      "description": "Работа и проекты",
-      "isActive": false
+      "name": "Работа"
     },
     {
-      "id": 3,
-      "name": "Путешествия",
-      "description": "Путешествия и приключения",
-      "isActive": false
+      "name": "Путешествия"
     },
     {
-      "id": 4,
-      "name": "Еда",
-      "description": "Кулинарные приключения и рецепты",
-      "isActive": false
+      "name": "Еда"
     },
     {
-      "id": 5,
-      "name": "Фитнес",
-      "description": "Цели фитнеса и тренировки",
-      "isActive": false
+      "name": "Фитнес"
     },
     {
-      "id": 6,
-      "name": "Хобби",
-      "description": "Хобби и творческие занятия",
-      "isActive": false
+      "name": "Хобби"
     },
     {
-      "id": 7,
-      "name": "Отношения",
-      "description": "Отношения и социальные связи",
-      "isActive": false
+      "name": "Отношения"
     },
     {
-      "id": 8,
-      "name": "Обучение",
-      "description": "Обучение и личностный рост",
-      "isActive": false
+      "name": "Обучение"
     },
     {
-      "id": 9,
-      "name": "Цели",
-      "description": "Краткосрочные и долгосрочные цели",
-      "isActive": false
+      "name": "Цели"
     },
     {
-      "id": 10,
-      "name": "Размышления",
-      "description": "Размышления и инсайты",
-      "isActive": false
+      "name": "Размышления"
     },
     {
-      "id": 11,
-      "name": "Хобби2",
-      "description": "Хобби и творческие занятия",
-      "isActive": false
+      "name": "Хобби2"
     },
     {
-      "id": 12,
-      "name": "Хобби3",
-      "description": "Хобби и творческие занятия",
-      "isActive": false
+      "name": "Хобби3"
     },
     {
-      "id": 13,
-      "name": "Хобби4",
-      "description": "Хобби и творческие занятия",
-      "isActive": false
+      "name": "Хобби4"
     }
   ]
 }

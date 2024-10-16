@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import styles from './Calendar.module.css'
 import { Icon } from "@components/UI";
+import styles from './Calendar.module.css'
 
 export const Calendar: React.FC = () => {
   const [date, setDate] = useState(new Date());

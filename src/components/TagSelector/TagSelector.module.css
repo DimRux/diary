@@ -39,14 +39,17 @@
 
 .inputTag:focus {
   border: 1px solid #cacacb;
+  transition: border 0.3s ease;
 }
 
 .inputTag:hover {
   border: 1px solid #e0e0e0;
+  transition: border 0.3s ease;
 }
 
 .inputTag:active {
   border: 1px solid #CACACB;
+  transition: border 0.3s ease;
 }
 
 .inputClearButton {
@@ -60,13 +63,23 @@
   right: 10px;
 }
 
+.inputClearButton:hover path {
+  fill: #747576;
+  transition: fill 0.3s ease;
+}
+
+.inputClearButton:active path {
+  fill: #494B4C;
+  transition: fill 0.3s ease;
+}
+
 .popUp {
   position: absolute;
   top: 45px;
-  padding: 22px 0px 8px 0;
+  padding: 22px 0px 6px 0;
   z-index: 1;
   width: 380px;
-  height: 192px;
+  max-height: 206px;
 
   background: #ffffff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -87,7 +100,7 @@
 
 .popUpDesc {
   font-family: "Lato", sans-serif;
-  padding-left: 18px;
+  padding: 0 0 12px 18px;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -114,16 +127,17 @@
 
 .tagButtonPopUp:hover {
   background-color: #F1F1F1;
+  transition: background-color 0.3s ease;
 }
 
 .tagButtonPopUp:active {
   background-color: #E9EAEA;
-  animation-delay: 400ms;
-  animation-duration: 0ms;
+  transition: background-color 0.3s ease;
 }
 
 .focused {
   background-color: #E9EAEA;
+  transition: background-color 0.3s ease;
 }
 
 .feedback {
@@ -165,19 +179,25 @@
 .tagWrapper:hover {
   background-color: #E0E0E0;
   color: #1E2022;
+  transition: background-color,color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .tagWrapper:hover svg path {
   fill: #1E2022;
+  transition: fill 0.3s ease;
 }
 
 .tagWrapper:active svg path {
   fill: #1E2022;
+  transition: fill 0.3s ease;
 }
 
 .tagWrapper:active {
   background-color: #CACACB;
   color: #1E2022;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .tagName {

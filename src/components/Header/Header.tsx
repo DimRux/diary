@@ -1,7 +1,7 @@
 import { Button, Logo } from '@ui/.';
-import styles from './Header.module.css';
 import React, { useContext } from 'react';
 import { PageContext } from '@context/pageContext';
+import styles from './Header.module.css';
 
 export const Header: React.FC = () => {
   const context = useContext(PageContext);
