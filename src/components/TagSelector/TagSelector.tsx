@@ -70,11 +70,11 @@ export const TagSelector: FC = () => {
   const handleEnterKey = (e: React.KeyboardEvent) => {
     e.preventDefault();
     setActiveTags((prevActiveTags) => {
-      const prevTagsName = prevActiveTags.map(({name}) => name);
+      const prevTagsName = prevActiveTags.map(({name}) => name.toLowerCase());
       prevTagsName.push('');
       let updatedTags = [...prevActiveTags];
       if (activeIndex === -1) {
-        updatedTags = prevTagsName.includes(value) ? updatedTags : [...prevActiveTags, { id: uniqId(), name: value }];
+        updatedTags = prevTagsName.includes(value.toLowerCase()) ? updatedTags : [...prevActiveTags, { id: uniqId(), name: value }];
       } else {
         updatedTags = [...prevActiveTags, tags[activeIndex]];
       }
@@ -139,6 +139,7 @@ export const TagSelector: FC = () => {
   <div className={styles.wrapper}>
     <Input
       placeholder="#теги"
+      aria-label="Перейти к вводу тега"
       className={clsx(styles.inputTag, value && styles.search)}
       value={value}
       onChange={handleInputChange}
@@ -151,7 +152,7 @@ export const TagSelector: FC = () => {
           <li className={styles.popUpDesc}>Нажми Enter для добавления тега</li>
           {tags.map(({ id, name }, index) => (
             <li key={id} data-index={index}>
-              <button type="button" className={clsx(styles.tagButtonPopUp, index === activeIndex && styles.focused)} onClick={chooseTag}>
+              <button type="button" className={clsx(styles.tagButtonPopUp, index === activeIndex && styles.focused)} onClick={chooseTag} aria-label="Выбрать тег из выпадающего списка">
                 {name}
               </button>
             </li>
@@ -164,7 +165,7 @@ export const TagSelector: FC = () => {
         {activeTags.map(({id, name}) => (
           <div key={id} className={styles.tagWrapper}>
             <span className={styles.tagName}>{`#${name}`}</span>
-            <button className={styles.clearButton} onClick={() => handleClearTag(id)}><Icon icon="cleanText" width={12} height={12} /></button>
+            <button className={styles.clearButton} onClick={() => handleClearTag(id)} aria-label="Удалить выбранный тег"><Icon icon="cleanText" width={12} height={12} /></button>
           </div>
         ))}
       </div>

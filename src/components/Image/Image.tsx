@@ -6,7 +6,7 @@ interface ImgProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export const Image: React.FC<ImgProps> = ({ ...props }) => {
   return (
-    <button type="button" className={styles.button} {...props}>
+    <button type="button" className={styles.button} aria-label="Изменить тему" {...props} >
       <img src={Theme} width={380} height={240} className={styles.img} alt='тема'  />
     </button>
   )

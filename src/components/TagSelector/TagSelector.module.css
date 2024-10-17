@@ -9,7 +9,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 10px 10px 10px 18px;
+  padding: 10px 52px 10px 18px;
   gap: 18px;
   z-index: 10;
   width: 100%;
@@ -119,6 +119,9 @@
   padding: 12px 18px;
   color: #1E2022;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .activeButton {
@@ -204,6 +207,8 @@
   max-width: 340px;
   overflow: hidden;
   text-overflow: ellipsis;
+  height: 20px;
+  white-space: nowrap;
 }
 
 .clearButton {
