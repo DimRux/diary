@@ -1,4 +1,5 @@
 import { Icon } from '@ui/.';
+import { clsx } from '@utils/clsx';
 import styles from './Button.module.css';
 
 type IconName = 'balloon' | 'edit';
@@ -18,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({ iconName, text, className, backg
   };
 
   return (
-    <button className={className} style={buttonStyle} {...props}>
+    <button className={clsx(className, styles.button)} style={buttonStyle} {...props}>
       {iconName && <Icon icon={iconName} />}
       {text && <span className={styles.text}>{text}</span>}
     </button>

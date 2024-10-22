@@ -22,4 +22,9 @@
 
 .buttonLogo {
   background: #FDFCF3;
+  transition: border 0.3s ease;
+}
+
+.buttonLogo:focus {
+  outline: 2px solid #e0e0e0;
 }

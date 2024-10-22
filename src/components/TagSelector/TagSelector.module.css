@@ -24,6 +24,8 @@
   font-size: 18px;
   line-height: 24px;
   color: #1e2022;
+
+  transition: border 0.3s ease;
 }
 
 .search {
@@ -39,17 +41,14 @@
 
 .inputTag:focus {
   border: 1px solid #cacacb;
-  transition: border 0.3s ease;
 }
 
 .inputTag:hover {
   border: 1px solid #e0e0e0;
-  transition: border 0.3s ease;
 }
 
 .inputTag:active {
   border: 1px solid #CACACB;
-  transition: border 0.3s ease;
 }
 
 .inputClearButton {

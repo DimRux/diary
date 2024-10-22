@@ -17,20 +17,26 @@
   border: 1px solid transparent;
   border-radius: 12px;
   font-size: 18px;
+
+  transition: border 0.3s ease;
 }
 
 .buttonEmoji:hover {
   border: 1px solid #E0E0E0;
-  transition: border 0.3s ease;
 }
 
 .buttonEmoji:hover svg path {
   fill: #747576;
-  transition: fill 0.3s ease;
+}
+
+.buttonEmoji:focus {
+  outline: 2px solid #e0e0e0;
 }
 
 .buttonEmojiActive {
   border: 1px solid #cacacb;
+}
+.buttonEmojiActive {
   transition: border 0.3s ease;
 }
 
@@ -87,6 +93,7 @@
 
   background: #f1f1f1;
   border-radius: 12px;
+
 }
 
 .emojiButton:hover {

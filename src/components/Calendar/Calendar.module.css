@@ -14,18 +14,6 @@ input::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-input::-moz-calendar-picker-indicator {
-  opacity: 0;
-  margin-left: 77px;
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 10;
-  cursor: pointer;
-}
-
 .inputCalendar {
   box-sizing: border-box;
   display: flex;
@@ -45,6 +33,7 @@ input::-moz-calendar-picker-indicator {
   font-size: 18px;
   line-height: 24px;
   color: #1E2022;
+  transition: border-color 0.3s ease;
 }
 
 .calendarIcon {
@@ -55,7 +44,6 @@ input::-moz-calendar-picker-indicator {
 
 .inputCalendar:hover {
   border-color: #E0E0E0;
-  transition: border-color 0.3s ease;
 }
 
 .inputCalendar:hover + .calendarIcon path {
@@ -73,4 +61,8 @@ input::-moz-calendar-picker-indicator {
 .inputCalendar:focus + .calendarIcon path {
   fill: #494B4C;
   transition: fill 0.3s ease;
+}
+
+.inputCalendar:has(input:focus) .calendarIcon {
+  outline: 2px solid red; /* Цвет и стиль outline при фокусе */
 }

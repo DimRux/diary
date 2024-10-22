@@ -5,7 +5,7 @@ import styles from './Calendar.module.css'
 
 export const Calendar: FC = () => {
   const [date, setDate] = useState(new Date(Date.now())
-    .toLocaleDateString('zh-Hans-CN', {
+    .toLocaleDateString('en-US', {
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
