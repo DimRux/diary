@@ -5,7 +5,7 @@ import styles from './Calendar.module.css'
 
 export const Calendar: FC = () => {
   const [date, setDate] = useState(new Date(Date.now())
-    .toLocaleDateString('en-US', {
+    .toLocaleDateString('zh-Hans-CN', {
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
@@ -14,7 +14,9 @@ export const Calendar: FC = () => {
   );
 
   useEffect(() => {
-    setDate(loadFromLocalStorage('date'));
+    const storedDateValue = loadFromLocalStorage('date');
+    if (storedDateValue)
+    setDate(storedDateValue);
   }, []);
 
   return (

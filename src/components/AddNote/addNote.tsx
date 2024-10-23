@@ -1,5 +1,5 @@
 import { FC, useState, useEffect, ChangeEvent } from "react";
-import { Textarea, Input, Button, Icon } from "@ui/."
+import { Textarea, Input, Button } from "@ui/."
 import { Selector, Image, Calendar, TagSelector } from "@components/.";
 import { saveToLocalStorage, loadFromLocalStorage } from "@utils/storage";
 import styles from './addNote.module.css';
@@ -54,7 +54,6 @@ export const AddNote: FC = () => {
             </div>
             <div className={styles.imgWrapper}>
               <Image />
-              <Icon icon='image' className={styles.iconImg} />
             </div>
             <TagSelector />
           </div>
