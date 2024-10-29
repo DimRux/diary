@@ -38,6 +38,7 @@ export const ImagesList: FC<ImagesListProps> = ({ images, setActiveTheme, setSho
           key={imgPath}
           onClick={() => onClickButton(imgPath)}
           disabled={isThemeChanging && theme !== imgPath}
+          aria-label='Кнопка выбора фона'
         >
           <img src={imgPath} className={styles.img} />
           {theme === imgPath ? <Icon icon='image' className={styles.icon} /> : null}

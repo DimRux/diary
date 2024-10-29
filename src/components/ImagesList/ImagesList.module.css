@@ -13,7 +13,7 @@
 }
 
 .activeButton {
-  filter: brightness(0.6);
+  filter: brightness(0.7);
 }
 
 .button:nth-child(3n + 1) {
@@ -33,6 +33,7 @@
   left: 45%;
 }
 
-.icon svg path {
-  fill: #CACACB;
+.icon path {
+  fill: #FFF;
+  filter: none;
 }

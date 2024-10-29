@@ -30,12 +30,14 @@
 }
 
 .buttonEmoji:focus {
-  outline: 2px solid #e0e0e0;
+  border: 1px solid #cacacb;
+  outline: none;
 }
 
 .buttonEmojiActive {
   border: 1px solid #cacacb;
 }
+
 .buttonEmojiActive {
   transition: border 0.3s ease;
 }

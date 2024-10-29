@@ -7,8 +7,8 @@ import Img4 from '@assets/images/img4.jpg';
 import Img5 from '@assets/images/img5.jpg';
 import Img6 from '@assets/images/img6.jpg';
 import { clsx } from "@utils/.";
-import { ImagesList } from "@components/.";
-import { Input, Modal, Icon } from "@ui/.";
+import { Modal, Icon } from "@ui/.";
+import { ImageModalContent } from "@components/.";
 import styles from './Image.module.css';
 
 interface ImgProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
@@ -18,7 +18,6 @@ export const Image: FC<ImgProps> = ({ ...props }) => {
   const [activeTheme, setActiveTheme] = useState(Theme);
   const [showModal, setShowModal] = useState(false);
   
-
   return (
     <>
       <button type="button"
@@ -36,24 +35,10 @@ export const Image: FC<ImgProps> = ({ ...props }) => {
 
         <Modal
           isShow={showModal}
-          onClose={() => setShowModal(false)}
           setShowModal={setShowModal}
         >
-          <div className={styles.modalInputWrapper}>
-            <Input
-              className={styles.modalInput}
-              placeholder="Поиск"
-            />
-          </div>
-          <div className={styles.modalImgListWrapper}>
-            <ImagesList
-              images={images}
-              setActiveTheme={setActiveTheme}
-              setShowModal={setShowModal}
-            />
-          </div>
+          <ImageModalContent images={images} setActiveTheme={setActiveTheme} setShowModal={setShowModal} />
         </Modal>
-
     </>
   )
 }

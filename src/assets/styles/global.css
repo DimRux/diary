@@ -16,6 +16,14 @@ body {
   background: #FDFCF3 center/cover no-repeat fixed;
 }
 
+body:has(#modals:empty) {
+  overflow: auto;
+}
+
+body:has(#modals:not(:empty)) {
+  overflow: hidden;
+}
+
 #root {
   width: 100%;
 }

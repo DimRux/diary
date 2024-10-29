@@ -20,6 +20,16 @@
   border-radius: var(--radius-button);
 }
 
+.button:hover {
+  background: #F5DB54 !important;
+}
+
+.button:focus,
+.button:active {
+  background: #EBD14A !important;
+  outline: none;
+}
+
 .buttonLogo {
   background: #FDFCF3;
   transition: border 0.3s ease;
