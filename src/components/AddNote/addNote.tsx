@@ -59,8 +59,8 @@ export const AddNote: FC = () => {
           </div>
         </div>
         <div className={styles.buttons}>
-          <Button type="submit" iconName='edit' text='Создать запись' className={styles.create} background={'#FFE55E'} />
-          <Button type="button" text='Отменить' className={styles.reset} background={'#E9EAEA'} />
+          <Button type="submit" iconName='edit' text='Создать запись' className={styles.create} background='yellow' />
+          <Button type="button" text='Отменить' className={styles.reset} background='grey' />
         </div>
       </form>
     </main>

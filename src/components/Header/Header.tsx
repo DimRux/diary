@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <button onClick={() => setJournalStarted(false)} className={styles.buttonLogo} aria-label="Перейти к стартовой странице"><Logo /></button>
-      {!journalStarted ? <Button iconName='edit' onClick={() => setJournalStarted(true)} className={styles.button} background={'#FFE55E'} /> : null}
+      {!journalStarted ? <Button iconName='edit' onClick={() => setJournalStarted(true)} className={styles.button} background='yellow' /> : null}
     </header>
   )
 }

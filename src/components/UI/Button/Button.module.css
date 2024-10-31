@@ -2,10 +2,6 @@
   transition: border 0.3s ease;
 }
 
-.button:focus {
-  outline: 2px solid #e0e0e0;
-}
-
 .text {
   font-family: "Lato", sans-serif;
   font-weight: 900;
@@ -13,4 +9,32 @@
   line-height: 24px;
   color: var(--text-color-black);
   white-space: nowrap;
+}
+
+.button-yellow {
+  background: #FFE55E;
+}
+
+.button-yellow:hover {
+  background: #F5DB54;
+}
+
+.button-yellow:focus-visible,
+.button-yellow:active {
+  background: #EBD14A;
+  outline: none;
+}
+
+.button-grey {
+  background: #E9EAEA;
+}
+
+.button-grey:hover {
+  background: #E0E0E0;
+}
+
+.button-grey:focus-visible,
+.button-grey:active {
+  background: #CACACB;
+  outline: none;
 }

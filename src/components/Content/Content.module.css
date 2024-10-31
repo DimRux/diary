@@ -20,20 +20,8 @@
   padding: 18px 34.5px;
   gap: var(--gap-10);
 
-
   height: 60px;
 
-  background: var(--button-background);
   box-shadow: var(--box-shadow);
   border-radius: var(--radius-button);
-}
-
-.button:hover {
-  background: #F5DB54 !important;
-}
-
-.button:focus,
-.button:active {
-  background: #EBD14A !important;
-  outline: none;
 }

@@ -17,7 +17,7 @@ export const Content: React.FC = () => {
     <main className={styles.main}>
       <div className={styles.container}>
         <img src='/notebook.png' width={'300'} height={'294'} alt='изображение блокнота' />
-        <Button iconName='edit' text='Создать первую запись' onClick={() => setJournalStarted(true)} className={styles.button} background={'#FFE55E'} aria-label="Перейти к созданию записи"/>
+        <Button iconName='edit' text='Создать первую запись' onClick={() => setJournalStarted(true)} className={styles.button} background='yellow' aria-label="Перейти к созданию записи"/>
       </div>
     </main>
   )
