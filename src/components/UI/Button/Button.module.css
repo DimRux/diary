@@ -25,6 +25,10 @@
   outline: none;
 }
 
+.button-yellow:disabled {
+  background: #FFEF9E;
+}
+
 .button-grey {
   background: #E9EAEA;
 }

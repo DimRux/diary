@@ -4,7 +4,7 @@
   align-items: flex-start;
   padding: 40px;
   gap: 20px;
-
+  position: relative;
   height: 140px;
 }
 
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 10px 10px 18px;
+  padding: 10px 50px 10px 18px;
   gap: 18px;
 
   width: 720px;
@@ -42,13 +42,67 @@
   color: #747576;
 }
 
+.buttonClean {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  background: transparent;
+
+  width: 40px;
+  height: 40px;
+}
+
+.buttonClean svg path {
+  fill: #9FA0A1;
+}
+
+.buttonClean:hover svg path {
+  fill: #747576;
+}
+
+.buttonClean:focus-visible svg path,
+.buttonClean:active svg path {
+  fill: #494B4C;
+}
+
 .modalImgListWrapper {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  justify-content: center;
   padding: 0px 40px 40px;
   gap: 10px;
 
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.modalHeight {
+  height: 570px;
+}
+
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.feedbackWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  height: 100%;
+
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1E2022;
 }

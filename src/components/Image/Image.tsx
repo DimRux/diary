@@ -1,11 +1,5 @@
 import { FC , useState } from "react"
 import Theme from '@assets/images/theme.png';
-import Img1 from '@assets/images/img1.jpg';
-import Img2 from '@assets/images/img2.jpg';
-import Img3 from '@assets/images/img3.jpg';
-import Img4 from '@assets/images/img4.jpg';
-import Img5 from '@assets/images/img5.jpg';
-import Img6 from '@assets/images/img6.jpg';
 import { clsx } from "@utils/.";
 import { Modal, Icon } from "@ui/.";
 import { ImageModalContent } from "@components/.";
@@ -14,7 +8,7 @@ import styles from './Image.module.css';
 interface ImgProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export const Image: FC<ImgProps> = ({ ...props }) => {
-  const images = [Img1, Img2, Img3, Img4, Img5, Img6];
+  const [images, setImages] = useState<string[]>([]);
   const [activeTheme, setActiveTheme] = useState(Theme);
   const [showModal, setShowModal] = useState(false);
   
@@ -32,12 +26,22 @@ export const Image: FC<ImgProps> = ({ ...props }) => {
         <img src={activeTheme} width={380} height={240} className={styles.img} alt='тема'  />
         {activeTheme === Theme && <Icon icon='image' className={styles.iconImg} />}
       </button>
+      {activeTheme !== Theme && (
+          <button 
+            className={styles.delTheme}
+            onClick={(e) => {
+              setActiveTheme(Theme)
+              e.stopPropagation();
+            }}>
+            <Icon icon="cleanText" />
+          </button>
+        )}
 
         <Modal
           isShow={showModal}
           setShowModal={setShowModal}
         >
-          <ImageModalContent images={images} setActiveTheme={setActiveTheme} setShowModal={setShowModal} />
+          <ImageModalContent images={images} setImages={setImages} setActiveTheme={setActiveTheme} setShowModal={setShowModal} />
         </Modal>
     </>
   )
