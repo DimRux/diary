@@ -3,18 +3,17 @@ import { clsx } from "@utils/.";
 import { ImagesList } from "@components/.";
 import { Icon, Input, Loader } from "@ui/.";
 import { useScrollWatcher } from "@hooks/useScrollWatcher";
+import { useDebounce } from "@hooks/useDebounce";
+import { ImageItem } from "@components/.";
+import { fetchImages } from "@api/imagesServis";
 import NoResult from '@assets/images/noResults.png';
 import styles from './ImageModalContent.module.css';
 
-interface ImageApi {
-  urls: {
-    small: string;
-  };
-}
+
 
 interface ModalContentProps {
-  images: string[],
-  setImages: Dispatch<SetStateAction<string[]>> ,
+  images: Array<ImageItem>,
+  setImages: Dispatch<SetStateAction<Array<ImageItem>>>,
   setActiveTheme: Dispatch<SetStateAction<string>> ,
   setShowModal: Dispatch<SetStateAction<boolean>>,
 }
@@ -23,65 +22,11 @@ export const ImageModalContent: FC<ModalContentProps> = ({ images, setImages, se
   const [scrollRef, isScrolled] = useScrollWatcher<HTMLDivElement>();
   const [value, setValue] = useState('');
   const [loading, setLoading] = useState(true);
-  const [debounceTimeout, setDebounceTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
+  const debouncedValue = useDebounce(value, 1000);
 
   useEffect(() => {
-    const getFoto = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(`https://api.unsplash.com/photos/random?count=10&client_id=WNhe5860GoCFUBtVIqLOPP6CTNfKN_7H-2fkhZs6e24`);
-        const data: ImageApi[] = await response.json();
-        const dataUrl = data.map((img) => img.urls.small);
-        console.log(data)
-        setImages(dataUrl);
-      } catch (error) {
-        console.error('Ошибка при получении изображений:', error);
-      } finally {
-      setLoading(false);
-      }
-    };
-
-    getFoto();
-  }, []);
-
-  useEffect(() => {
-    
-    const getFoto = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(`https://api.unsplash.com/search/photos?query=${value}&client_id=WNhe5860GoCFUBtVIqLOPP6CTNfKN_7H-2fkhZs6e24&per_page=10`);
-        const data: { results: ImageApi[] } = await response.json();
-        const dataUrl = data.results.map((img) => img.urls.small);
-        
-        setImages(dataUrl);
-      } catch (error) {
-        console.error('Ошибка при получении изображений:', error);
-      } finally {
-      setLoading(false);
-      }
-    };
-    
-    if (value) {
-      if (debounceTimeout) {
-        clearTimeout(debounceTimeout);
-      }
-
-      const timeout = setTimeout(() => {
-        getFoto();
-      }, 500);
-
-      setDebounceTimeout(timeout);
-    } else {
-      setImages([]);
-    }
-
-    return () => {
-      if (debounceTimeout) {
-        clearTimeout(debounceTimeout);
-      }
-    };
-
-  }, [value]);
+    fetchImages(debouncedValue, setLoading, setImages);
+  }, [debouncedValue]);
 
   return (
     <>
@@ -127,3 +72,5 @@ export const ImageModalContent: FC<ModalContentProps> = ({ images, setImages, se
     </>
   )
 }
+
+    

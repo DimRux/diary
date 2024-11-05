@@ -24,12 +24,22 @@
   opacity: 0.6;
 }
 
+.photo:hover {
+  opacity: 1;
+  filter: brightness(0.9);
+}
+
 .button:hover .iconImg path {
   fill: #747576;
 }
 
 .button:active {
   opacity: 0.8;
+}
+
+.photo:active {
+  opacity: 1;
+  filter: brightness(0.7);
 }
 
 .button:active .iconImg path {
@@ -54,15 +64,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 .delTheme svg {
   width: 16px;
   height: 16px;
+
 }
 
 .delTheme svg path {
   fill: #1E2022;
+  transition: fill 0.3s ease;
 }
 
 .delTheme:hover {

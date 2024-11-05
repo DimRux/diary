@@ -1,7 +1,5 @@
 import React, { TextareaHTMLAttributes } from "react"
 
-interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {}
-
-export const Textarea: React.FC<TextareaProps> = ({ ...porps}) => {
+export const Textarea: React.FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = ({ ...porps}) => {
   return <textarea name="description" id="userTask" placeholder="Описание" {...porps}></textarea>
 }

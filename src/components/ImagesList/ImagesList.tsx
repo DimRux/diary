@@ -1,11 +1,12 @@
 import { FC, Dispatch, SetStateAction, useState } from 'react';
 import { Icon } from '@ui/.';
 import { clsx } from '@utils/.';
+import { ImageItem } from '@components/Image/Image';
 import Theme from '@assets/images/theme.png';
 import styles from './ImagesList.module.css';
 
 interface ImagesListProps {
-  images: string[];
+  images: Array<ImageItem>;
   setActiveTheme: Dispatch<SetStateAction<string>>,
   setShowModal: Dispatch<SetStateAction<boolean>>,
 }
@@ -32,9 +33,9 @@ export const ImagesList: FC<ImagesListProps> = ({ images, setActiveTheme, setSho
 
   return (
     <div className={styles.wrapper}>
-      {images.map((imgPath) => (
+      {images.map(({isVertical, imgPath}) => (
         <button 
-          className={clsx(styles.button, theme === imgPath ? styles.activeButton : null)} 
+          className={clsx(styles.button, theme === imgPath ? styles.activeButton : null, isVertical && styles.verticalImg)} 
           key={imgPath}
           onClick={() => onClickButton(imgPath)}
           disabled={isThemeChanging && theme !== imgPath}

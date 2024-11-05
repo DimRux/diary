@@ -16,7 +16,7 @@
   filter: brightness(0.7);
 }
 
-.button:nth-child(3n + 1) {
+.verticalImg {
   height: 440px;
   grid-row: span 2;
 }
