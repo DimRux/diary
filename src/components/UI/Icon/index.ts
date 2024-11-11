@@ -6,3 +6,5 @@ export * from './Chevron';
 export * from './EmojiStart';
 export * from './Clean';
 export * from './CleanText';
+export * from './Delete';
+

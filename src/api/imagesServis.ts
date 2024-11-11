@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import { ImageItem } from "@components/index";
 
 interface ImageApi {
+  alt_description: 'string',
   height: number,
   width: number,
   urls: {
@@ -21,10 +22,11 @@ export const fetchImages = async (
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data)
     
     const dataUrl = debouncedValue 
-      ? data.results.map((img: ImageApi) => ({ isVertical: img.height > img.width, imgPath: img.urls.small }))
-      : data.map((img: ImageApi) => ({ isVertical: img.height > img.width, imgPath: img.urls.small }));
+      ? data.results.map((img: ImageApi) => ({ isVertical: img.height > img.width, imgPath: img.urls.small, alt: img.alt_description }))
+      : data.map((img: ImageApi) => ({ isVertical: img.height > img.width, imgPath: img.urls.small, alt: img.alt_description }));
 
     setImages(dataUrl);
   } catch (error) {

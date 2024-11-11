@@ -18,7 +18,7 @@
   border-radius: 12px;
   font-size: 18px;
 
-  transition: border 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .buttonEmoji:hover {
@@ -39,7 +39,7 @@
 }
 
 .buttonEmojiActive {
-  transition: border 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .buttonEmojiActive svg path {

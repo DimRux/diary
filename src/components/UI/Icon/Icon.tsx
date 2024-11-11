@@ -1,5 +1,5 @@
 import { SVGProps } from 'react';
-import { Balloon, Edit, Image, CalendarSvg, Chevron, EmojiStart, Clean, CleanText } from "./";
+import { Balloon, Edit, Image, CalendarSvg, Chevron, EmojiStart, Clean, CleanText, Delete } from "./";
 
 
 interface IconProps extends SVGProps<SVGSVGElement> {
@@ -15,6 +15,7 @@ const icons = {
   emoji: EmojiStart,
   clean: Clean,
   cleanText: CleanText,
+  delete: Delete,
 } as const;
 
 type IconName = keyof typeof icons;

@@ -8,6 +8,7 @@ import styles from './Image.module.css';
 export interface ImageItem {
   isVertical: boolean;
   imgPath: string;
+  alt: string;
 }
 
 export const Image: FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ ...props }) => {
@@ -44,7 +45,7 @@ export const Image: FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ ...pr
               setActiveTheme(Theme)
               e.stopPropagation();
             }}>
-            <Icon icon="cleanText" />
+            <Icon icon="delete" />
           </button>
         )}
 

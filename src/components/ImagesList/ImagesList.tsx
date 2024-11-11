@@ -33,7 +33,7 @@ export const ImagesList: FC<ImagesListProps> = ({ images, setActiveTheme, setSho
 
   return (
     <div className={styles.wrapper}>
-      {images.map(({isVertical, imgPath}) => (
+      {images.map(({isVertical, imgPath, alt}) => (
         <button 
           className={clsx(styles.button, theme === imgPath ? styles.activeButton : null, isVertical && styles.verticalImg)} 
           key={imgPath}
@@ -41,7 +41,7 @@ export const ImagesList: FC<ImagesListProps> = ({ images, setActiveTheme, setSho
           disabled={isThemeChanging && theme !== imgPath}
           aria-label='Кнопка выбора фона'
         >
-          <img src={imgPath} className={styles.img} />
+          <img src={imgPath} className={styles.img} alt={alt} />
           {theme === imgPath ? <Icon icon='image' className={styles.icon} /> : null}
         </button>
       ))}

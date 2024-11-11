@@ -64,7 +64,7 @@ export const ImageModalContent: FC<ModalContentProps> = ({ images, setImages, se
         )}
         {(!loading && images.length === 0) && (
           <div className={styles.feedbackWrapper}>
-            <img src={NoResult} width={200} height={220} />
+            <img src={NoResult} width={200} height={220} alt="НЛО" />
             <p>По твоему запросу ничего не найдено</p>
           </div>
         )}

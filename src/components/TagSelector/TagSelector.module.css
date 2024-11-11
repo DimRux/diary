@@ -25,7 +25,7 @@
   line-height: 24px;
   color: #1e2022;
 
-  transition: border 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .search {
@@ -129,17 +129,17 @@
 
 .tagButtonPopUp:hover {
   background-color: #F1F1F1;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .tagButtonPopUp:active {
   background-color: #E9EAEA;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .focused {
   background-color: #E9EAEA;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .feedback {
@@ -181,8 +181,7 @@
 .tagWrapper:hover {
   background-color: #E0E0E0;
   color: #1E2022;
-  transition: background-color,color 0.3s ease;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .tagWrapper:hover svg path {
@@ -198,8 +197,7 @@
 .tagWrapper:active {
   background-color: #CACACB;
   color: #1E2022;
-  transition: background-color 0.3s ease;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .tagName {

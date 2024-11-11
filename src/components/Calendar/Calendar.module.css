@@ -33,7 +33,7 @@ input::-webkit-calendar-picker-indicator {
   font-size: 18px;
   line-height: 24px;
   color: #1E2022;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .calendarIcon {
@@ -54,7 +54,7 @@ input::-webkit-calendar-picker-indicator {
 .inputCalendar:active,
 .inputCalendar:focus {
   border-color: #CACACB;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .inputCalendar:active + .calendarIcon path,
