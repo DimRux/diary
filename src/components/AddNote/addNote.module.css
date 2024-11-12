@@ -36,7 +36,7 @@
   color: #1e2022;
 
   flex-shrink: 0;
-  transition: border 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .inputHeader::placeholder {
@@ -87,7 +87,7 @@
   font-size: 18px;
   line-height: 24px;
   color: #1e2022;
-  transition: border 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .textarea::placeholder {
@@ -156,6 +156,10 @@
   
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+}
+
+.create:disabled {
+  cursor: not-allowed;
 }
 
 .reset {

@@ -1,22 +1,19 @@
-import { FC, useState, useEffect } from "react"
+import { FC, useState, Dispatch, SetStateAction } from "react"
 import { Icon } from "@components/UI";
 import { useOutsideClick } from "@hooks/useOutsideClick";
 import { clsx } from "@utils/clsx";
 import { arrEmoji } from "@data/arrEmoji";
-import { saveToLocalStorage, loadFromLocalStorage } from "@utils/storage";
+import { saveToLocalStorage } from "@utils/storage";
 import styles from './Selector.module.css'
 
-export const Selector: FC = () => {
-  const [emoji, setEmoji] = useState(-1);
+interface SelectorProps {
+  emoji: number;
+  setEmoji: Dispatch<SetStateAction<number>>;
+}
+
+export const Selector: FC<SelectorProps> = ({ emoji , setEmoji}) => {
   const [isOpenEmojis, setIsOpenEmojis] = useState(false);
   const ref = useOutsideClick<HTMLButtonElement>(() => setIsOpenEmojis(false));
-
-  useEffect(() => {
-    const emojiNumber = loadFromLocalStorage('emoji');
-    if (emojiNumber) {
-      setEmoji(loadFromLocalStorage('emoji'));
-    }
-  },[]);
 
   return (
     <div className={styles.selector}>

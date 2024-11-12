@@ -22,7 +22,6 @@ export const fetchImages = async (
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data)
     
     const dataUrl = debouncedValue 
       ? data.results.map((img: ImageApi) => ({ isVertical: img.height > img.width, imgPath: img.urls.small, alt: img.alt_description }))

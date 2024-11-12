@@ -1,9 +1,14 @@
-import { FC , useState } from "react"
+import { FC , useState, Dispatch, SetStateAction } from "react"
 import Theme from '@assets/images/theme.png';
 import { clsx } from "@utils/.";
 import { Modal, Icon } from "@ui/.";
 import { ImageModalContent } from "@components/.";
 import styles from './Image.module.css';
+
+interface ImageProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  activeTheme: string,
+  setActiveTheme: Dispatch<SetStateAction<string>>
+}
 
 export interface ImageItem {
   isVertical: boolean;
@@ -11,9 +16,8 @@ export interface ImageItem {
   alt: string;
 }
 
-export const Image: FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ ...props }) => {
+export const Image: FC<ImageProps> = ({ activeTheme, setActiveTheme, ...props }) => {
   const [images, setImages] = useState<Array<ImageItem>>([]);
-  const [activeTheme, setActiveTheme] = useState(Theme);
   const [showModal, setShowModal] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   
@@ -42,7 +46,7 @@ export const Image: FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ ...pr
             onFocus={() => setIsHovered(true)}
             onBlur={() => setIsHovered(false)}
             onClick={(e) => {
-              setActiveTheme(Theme)
+              setActiveTheme(Theme);
               e.stopPropagation();
             }}>
             <Icon icon="delete" />

@@ -1,20 +1,31 @@
-import { ChangeEvent, FC, SyntheticEvent, useState, useEffect } from "react";
+import { ChangeEvent, FC, SyntheticEvent, useState, useEffect, Dispatch, SetStateAction } from "react";
 import { clsx, saveToLocalStorage, loadFromLocalStorage, uniqId, getFilteredTags, scrollToTag } from "@utils/."
 import { Icon, Input } from "@components/UI";
-import tagsJson from "@data/tags.json";
+import { RootState } from "@slices/index";
+import { useSelector } from "react-redux";
 import styles from "./TagSelector.module.css";
+import { createSelector } from "@reduxjs/toolkit";
+import { NotesState } from "@slices/notesSlice";
 
-interface Tag {
+export interface Tag {
   id: string;
   name: string;
 }
 
-export const TagSelector: FC = () => {
+interface TagSelectorProps {
+  activeTags: Tag[],
+  setActiveTags: Dispatch<SetStateAction<Tag[]>>
+}
+const fn1 = (state: RootState) => state.notes;
+const fn2 = (notesState: NotesState) => notesState.notes;
+
+const fn = createSelector([fn1, fn2], (notes) => notes.notes.map(note => note.tags).flat());
+
+export const TagSelector: FC<TagSelectorProps> = ({ activeTags, setActiveTags}) => {
+  const allTags = useSelector(fn);
   const [value, setValue] = useState('');
-  const [tags, setTags] = useState<Tag[]>(tagsJson.tags.map((tag) => {
-    return { id: uniqId(), ...tag};
-  }));
-  const [activeTags, setActiveTags] = useState<Tag[] | []>([]);
+  const [tags, setTags] = useState<Tag[]>(allTags || []);
+
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const effectUpdateTagsOnInput = (inputValue: string) => {
@@ -51,7 +62,7 @@ export const TagSelector: FC = () => {
     saveToLocalStorage<string>('inputTag', inputValue);
     setActiveIndex(-1);
     
-    const filteredTags = getFilteredTags(inputValue, activeTags, tagsJson.tags);
+    const filteredTags = getFilteredTags(inputValue, activeTags, allTags);
     setTags(filteredTags);
   };
 

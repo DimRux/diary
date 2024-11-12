@@ -1,23 +1,14 @@
-import { FC, useState, useEffect } from "react"
+import { FC, Dispatch, SetStateAction } from "react"
 import { Icon } from "@components/UI";
-import { saveToLocalStorage, loadFromLocalStorage } from "@utils/storage";
+import { saveToLocalStorage } from "@utils/storage";
 import styles from './Calendar.module.css'
 
-export const Calendar: FC = () => {
-  const [date, setDate] = useState(new Date(Date.now())
-    .toLocaleDateString('zh-Hans-CN', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    })
-    .replace(/\//g, '-')
-  );
+interface CalendarProps {
+  date: string;
+  setDate: Dispatch<SetStateAction<string>>;
+}
 
-  useEffect(() => {
-    const storedDateValue = loadFromLocalStorage('date');
-    if (storedDateValue)
-    setDate(storedDateValue);
-  }, []);
+export const Calendar: FC<CalendarProps> = ({ date, setDate }) => {
 
   return (
     <label htmlFor="calendar" className={styles.wrapper}>
