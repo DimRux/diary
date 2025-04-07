@@ -10,9 +10,10 @@ interface ImagesListProps {
   images: Array<ImageItem>;
   setActiveTheme: Dispatch<SetStateAction<string>>,
   setShowModal: Dispatch<SetStateAction<boolean>>,
+  setIsVisible: Dispatch<SetStateAction<boolean>>,
 }
 
-export const ImagesList: FC<ImagesListProps> = ({ images, setActiveTheme, setShowModal }) => {
+export const ImagesList: FC<ImagesListProps> = ({ images, setActiveTheme, setShowModal, setIsVisible }) => {
   const [theme, setTheme] = useState('');
   const [isThemeChanging, setIsThemeChanging] = useState(false);
 
@@ -24,12 +25,12 @@ export const ImagesList: FC<ImagesListProps> = ({ images, setActiveTheme, setSho
     } else {
       setTheme(themePath);
       setIsThemeChanging(true);
-      
+      setIsVisible(false);
       setTimeout(() => {
         setShowModal(false);
         setActiveTheme(themePath);
         saveToLocalStorage<string>('activeTheme',themePath);
-      }, 200);
+      }, 500);
     }
   };
 

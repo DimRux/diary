@@ -1,4 +1,4 @@
-import { FC, Dispatch, SetStateAction, ReactNode, useState, useEffect, useRef } from "react";
+import { FC, Dispatch, SetStateAction, ReactNode, useRef } from "react";
 import { createPortal } from "react-dom";
 import { Icon } from "../Icon/Icon";
 import { useOutsideClick } from "@hooks/useOutsideClick";
@@ -8,24 +8,19 @@ import styles from "./Modal.module.css"
 
 interface ModalProps {
   setShowModal: Dispatch<SetStateAction<boolean>>,
+  setIsVisible: Dispatch<SetStateAction<boolean>>,
   children: ReactNode,
   isShow: boolean,
+  isVisible: boolean,
 }
 
-export const Modal: FC<ModalProps> = ({ isShow, setShowModal, children }) => {
+export const Modal: FC<ModalProps> = ({ isShow, setShowModal, isVisible, setIsVisible, children }) => {
   const modal = document.querySelector('#modals');
   if (!modal) {
     throw new Error('Элемента нет');
   }
 
-  const [isVisible, setIsVisible] = useState(isShow);
   const wrapperRef = useRef(null);
-
-  useEffect(() => setIsVisible(isShow), [isShow]);
-
-  useEffect(() => {
-    if (isShow) setIsVisible(true);
-  }, [isShow]);
 
   const handleClose = () => {
     setIsVisible(false);
@@ -36,7 +31,6 @@ export const Modal: FC<ModalProps> = ({ isShow, setShowModal, children }) => {
 
   const contentRef = useOutsideClick<HTMLDivElement>(handleClose);
 
-  
   useFocusTrap(wrapperRef, isShow);
 
   return (

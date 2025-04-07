@@ -1,21 +1,29 @@
 import { Button, Logo } from '@ui/.';
-import React, { useContext } from 'react';
-import { PageContext } from '@context/pageContext';
-import styles from './Header.module.css';
+import { FC } from 'react';
 
-export const Header: React.FC = () => {
-  const context = useContext(PageContext);
-    
-  if (!context) {
-    throw new Error('App must be used within a PageProvider');
+import styles from './Header.module.css';
+import { useAppDispatch, useAppSelector } from '@slices/index';
+import { navigateTo } from '@slices/routersSlice';
+import { PagePaths } from '@data/pagePaths';
+
+export const Header: FC = () => {
+  const dispatch = useAppDispatch();
+  const { path } = useAppSelector((state) => state.routersSlice);
+
+  const addNote = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    dispatch(navigateTo(PagePaths.AddNote));
   }
-    
-  const { journalStarted, setJournalStarted } = context;
+
+  const getHome = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    dispatch(navigateTo(PagePaths.Home));
+  }
 
   return (
     <header className={styles.header}>
-      <button onClick={() => setJournalStarted(false)} className={styles.buttonLogo} aria-label="Перейти к стартовой странице"><Logo /></button>
-      {!journalStarted ? <Button iconName='edit' onClick={() => setJournalStarted(true)} className={styles.button} background='yellow' /> : null}
+      <button onClick={(e) => getHome(e)} className={styles.buttonLogo} aria-label="Перейти к стартовой странице"><Logo /></button>
+      {path !== PagePaths.AddNote && <Button iconName='edit' onClick={(e) => addNote(e)} className={styles.button} background='yellow' />}
     </header>
   )
 }

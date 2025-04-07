@@ -64,5 +64,5 @@ input::-webkit-calendar-picker-indicator {
 }
 
 .inputCalendar:has(input:focus) .calendarIcon {
-  outline: 2px solid red; /* Цвет и стиль outline при фокусе */
+  outline: 2px solid red;
 }

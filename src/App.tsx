@@ -1,18 +1,14 @@
-import { FC, useContext, useEffect } from 'react';
-import { Header, Content, Footer, AddNote } from '@components/index';
-import { PageContext } from '@context/pageContext';
-import { useDispatch } from "react-redux";
+import { FC, useEffect } from 'react';
+import { Header, Footer} from '@components/index';
 import { loadNotes } from '@slices/notesSlice';
 import { loadFromLocalStorage } from "@utils/storage";
 import styles from './App.module.css';
+import { useAppDispatch } from './store';
+import { Router } from './app/Router/Router';
+
 
 export const App: FC = () => {
-  const context = useContext(PageContext);
-  const dispatch = useDispatch();
-
-  if (!context) {
-    throw new Error('App must be used within a PageProvider');
-  }
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const storedNotes = loadFromLocalStorage('notes') || [];
@@ -20,12 +16,10 @@ export const App: FC = () => {
     dispatch(loadNotes(storedNotes));
   }, [dispatch]);
 
-  const { journalStarted } = context;
-
   return (
     <div className={styles.container}>
       <Header />
-      {journalStarted ? <AddNote /> : <Content />}
+      <Router />
       <Footer />
     </div>
   );

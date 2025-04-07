@@ -1,11 +1,11 @@
 import { ChangeEvent, FC, SyntheticEvent, useState, useEffect, Dispatch, SetStateAction } from "react";
 import { clsx, saveToLocalStorage, loadFromLocalStorage, uniqId, getFilteredTags, scrollToTag } from "@utils/."
 import { Icon, Input } from "@components/UI";
-import { RootState } from "@slices/index";
-import { useSelector } from "react-redux";
+import { RootState, useAppSelector } from "@slices/index";
 import styles from "./TagSelector.module.css";
 import { createSelector } from "@reduxjs/toolkit";
-import { NotesState } from "@slices/notesSlice";
+import { useOutsideClick } from "@hooks/useOutsideClick";
+
 
 export interface Tag {
   id: string;
@@ -17,16 +17,24 @@ interface TagSelectorProps {
   setActiveTags: Dispatch<SetStateAction<Tag[]>>
 }
 const fn1 = (state: RootState) => state.notes;
-const fn2 = (notesState: NotesState) => notesState.notes;
 
-const fn = createSelector([fn1, fn2], (notes) => notes.notes.map(note => note.tags).flat());
+const fn = createSelector([fn1], (notes) => {
+  const allTags = notes.notes.flatMap(note => note.tags);
+  if (allTags.length === 0) return []; 
+  
+  const uniqueTagsMap = new Map(allTags.map(tag => [tag.name, tag]));
+  const uniqueTags = Array.from(uniqueTagsMap.values());
+
+  return uniqueTags; });
 
 export const TagSelector: FC<TagSelectorProps> = ({ activeTags, setActiveTags}) => {
-  const allTags = useSelector(fn);
+  const allTags = useAppSelector(fn);
   const [value, setValue] = useState('');
   const [tags, setTags] = useState<Tag[]>(allTags || []);
 
   const [activeIndex, setActiveIndex] = useState(-1);
+
+  const ref = useOutsideClick<HTMLDivElement>(() => setValue(''));
 
   const effectUpdateTagsOnInput = (inputValue: string) => {
     setTags((prevState) => 
@@ -147,7 +155,7 @@ export const TagSelector: FC<TagSelectorProps> = ({ activeTags, setActiveTags}) 
   }
   
   return (
-  <div className={styles.wrapper}>
+  <div className={styles.wrapper} ref={ref}>
     <Input
       placeholder="#теги"
       aria-label="Перейти к вводу тега"

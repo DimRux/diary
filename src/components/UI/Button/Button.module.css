@@ -11,6 +11,10 @@
   white-space: nowrap;
 }
 
+.icon {
+  flex-shrink: 0;
+}
+
 .button-yellow {
   background: #FFE55E;
 }

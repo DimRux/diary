@@ -19,6 +19,7 @@ export interface ImageItem {
 export const Image: FC<ImageProps> = ({ activeTheme, setActiveTheme, ...props }) => {
   const [images, setImages] = useState<Array<ImageItem>>([]);
   const [showModal, setShowModal] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   
   return (
@@ -31,6 +32,7 @@ export const Image: FC<ImageProps> = ({ activeTheme, setActiveTheme, ...props })
         aria-label="Изменить тему"
         onClick={(e) => {
           setShowModal(prevState => !prevState);
+          setIsVisible(true);
           e.stopPropagation();
         }}
         {...props}
@@ -55,9 +57,11 @@ export const Image: FC<ImageProps> = ({ activeTheme, setActiveTheme, ...props })
 
         <Modal
           isShow={showModal}
+          isVisible={isVisible}
+          setIsVisible={setIsVisible}
           setShowModal={setShowModal}
         >
-          <ImageModalContent images={images} setImages={setImages} setActiveTheme={setActiveTheme} setShowModal={setShowModal} />
+          <ImageModalContent images={images} setImages={setImages} setActiveTheme={setActiveTheme} setShowModal={setShowModal} setIsVisible={setIsVisible} />
         </Modal>
     </>
   )

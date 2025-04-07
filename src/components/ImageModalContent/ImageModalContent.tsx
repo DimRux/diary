@@ -16,9 +16,10 @@ interface ModalContentProps {
   setImages: Dispatch<SetStateAction<Array<ImageItem>>>,
   setActiveTheme: Dispatch<SetStateAction<string>> ,
   setShowModal: Dispatch<SetStateAction<boolean>>,
+  setIsVisible: Dispatch<SetStateAction<boolean>>,
 }
 
-export const ImageModalContent: FC<ModalContentProps> = ({ images, setImages, setActiveTheme, setShowModal }) => {
+export const ImageModalContent: FC<ModalContentProps> = ({ images, setImages, setActiveTheme, setShowModal, setIsVisible }) => {
   const [scrollRef, isScrolled] = useScrollWatcher<HTMLDivElement>();
   const [value, setValue] = useState('');
   const [loading, setLoading] = useState(true);
@@ -60,6 +61,7 @@ export const ImageModalContent: FC<ModalContentProps> = ({ images, setImages, se
             images={images}
             setActiveTheme={setActiveTheme}
             setShowModal={setShowModal}
+            setIsVisible={setIsVisible}
           />
         )}
         {(!loading && images.length === 0) && (

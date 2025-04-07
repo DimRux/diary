@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { Tag } from '@components/index';
 
-export interface Note {
+export interface INote {
+  id: string;
   title: string;
   date: string;
   emoji: string;
@@ -12,7 +13,7 @@ export interface Note {
 }
 
 export interface NotesState {
-  notes: Note[];
+  notes: INote[];
 }
 
 const initialState: NotesState = {
@@ -23,17 +24,23 @@ export const notesSlice = createSlice({
   name: 'notes',
   initialState,
   reducers: {
-    addNote: (state, action: PayloadAction<Note>) => {
+    addNote: (state, action: PayloadAction<INote>) => {
       state.notes.push(action.payload);
     },
     removeNote: (state, action: PayloadAction<number>) => {
       state.notes.splice(action.payload, 1);
     },
-    updateNote: (state, action: PayloadAction<{ index: number; note: Note }>) => {
-      const { index, note } = action.payload;
-      state.notes[index] = note;
+    updateNote: (state, action: PayloadAction<{ id: string; note: INote }>) => {
+      const { id, note } = action.payload;
+      const index = state.notes.findIndex(existingNote => existingNote.id === id);
+      
+      if (index !== -1) {
+        state.notes[index] = note;
+      } else {
+        console.log('Заметка с таким id не найдена');
+      }
     },
-    loadNotes: (state, action: PayloadAction<Note[]>) => {
+    loadNotes: (state, action: PayloadAction<INote[]>) => {
       state.notes = action.payload;
     },
   },

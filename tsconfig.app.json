@@ -31,7 +31,7 @@
       "@data/*": ["./src/data/*"],
       "@context/*": ["./src/context/*"],
       "@api/*": ["./src/api/*"],
-      "@slices/*": ["./src/slices/*"],
+      "@slices/*": ["src/store/*"],
     }
   },
   "include": ["src"]

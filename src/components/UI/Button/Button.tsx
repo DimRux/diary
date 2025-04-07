@@ -10,14 +10,14 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
   className?: string;
   background?: keyof typeof colors | 'transparent';
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({ iconName, text, className, background = 'transparent', ...props }) => {
 
   return (
     <button className={clsx(className, styles.button, styles[`button-${background}`])} {...props}>
-      {iconName && <Icon icon={iconName} />}
+      {iconName && <Icon className={styles.icon} icon={iconName} />}
       {text && <span className={styles.text}>{text}</span>}
     </button>
   );
