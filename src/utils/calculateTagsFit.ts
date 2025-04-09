@@ -4,7 +4,7 @@ import styles from '@components/TagList/TagList.module.css'
 
 /** Расстояние между тегами */
 export const GAP = 8;
-
+export const PADDING = 16;
 
 export const calculateTagsFit = (
 	arr: ITag[] | undefined,
@@ -19,9 +19,9 @@ export const calculateTagsFit = (
 	let otherTags = arr.length;
 
 	for (let i = 0; i < arr.length; i += 1) {
-		const widthTag = getElementWidth(arr[i].name, styles.tag);
+		const widthTag = getElementWidth(`#${arr[i].name}`, styles.tag);
 
-		const resultWidth = widthTag + (tagsCount > 0 ? GAP : 0);
+		const resultWidth = widthTag + (tagsCount > 0 ? GAP : 0) + PADDING;
 
 		if (tagsContainerWidth >= resultWidth) {
 			tagsContainerWidth -= resultWidth;

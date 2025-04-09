@@ -25,6 +25,8 @@
   color: #1E2022;
   max-width: 88%;
   height: 22px;
+
+  gap: 4px;
 }
 
 .tag span {
