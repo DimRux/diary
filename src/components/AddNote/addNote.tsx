@@ -98,6 +98,7 @@ export const AddNote: FC = () => {
     const resultNote = loadFromLocalStorage('notes') || [];
     resultNote.push(note);
     saveToLocalStorage<NotesState>('notes', resultNote);
+    dispatch(navigateTo(PagePaths.Notes));
 
     setTitle('');
     setContent('');
