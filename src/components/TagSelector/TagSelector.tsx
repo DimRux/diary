@@ -5,6 +5,7 @@ import { RootState, useAppSelector } from "@slices/index";
 import styles from "./TagSelector.module.css";
 import { createSelector } from "@reduxjs/toolkit";
 import { useOutsideClick } from "@hooks/useOutsideClick";
+import { Tag } from "@components/Tag/Tag";
 
 
 export interface Tag {
@@ -182,10 +183,9 @@ export const TagSelector: FC<TagSelectorProps> = ({ activeTags, setActiveTags}) 
     {activeTags.length > 0 && (
       <div className={styles.tagsContainer}>
         {activeTags.map(({id, name}) => (
-          <div key={id} className={styles.tagWrapper}>
-            <span className={styles.tagName}>{`#${name}`}</span>
+          <Tag name={`#${name}`} key={id}> 
             <button className={styles.clearButton} onClick={() => handleClearTag(id)} aria-label="Удалить выбранный тег"><Icon icon="cleanText" width={12} height={12} /></button>
-          </div>
+          </Tag>
         ))}
       </div>
     )}

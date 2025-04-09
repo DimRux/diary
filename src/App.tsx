@@ -5,13 +5,13 @@ import { loadFromLocalStorage } from "@utils/storage";
 import styles from './App.module.css';
 import { useAppDispatch } from './store';
 import { Router } from './app/Router/Router';
-
+import { MOCK_NOTES } from '@data/mockNotes';
 
 export const App: FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const storedNotes = loadFromLocalStorage('notes') || [];
+    const storedNotes = loadFromLocalStorage('notes') || MOCK_NOTES;
     console.log('Store при старте приложения:', storedNotes);
     dispatch(loadNotes(storedNotes));
   }, [dispatch]);

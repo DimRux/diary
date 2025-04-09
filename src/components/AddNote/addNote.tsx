@@ -200,7 +200,7 @@ export const AddNote: FC = () => {
             text={idPath ? 'Изменить запись' : 'Создать запись'}
             className={styles.create}
             background='yellow'
-            disabled={title === '' || content === '' || date === ''}
+            disabled={title === '' || date === ''}
           />
           <Button
             type="button" 

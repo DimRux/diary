@@ -1,6 +1,6 @@
 import { AddNote } from "@components/AddNote/addNote"
 import { Content } from "@components/Content/Content"
-import { Notes } from "@components/Notes/Notes"
+import { NotesList } from "@components/NotesList/NotesList"
 import { PagePaths, routePatterns } from "@data/pagePaths"
 import { useAppDispatch, useAppSelector } from "@slices/index"
 import { navigateTo } from "@slices/routersSlice"
@@ -9,7 +9,7 @@ import { useEffect } from "react"
 const pages ={
   [PagePaths.Home]: <Content />,
   [PagePaths.AddNote]: <AddNote />,
-  [PagePaths.Notes]: <Notes />,
+  [PagePaths.Notes]: <NotesList />,
 };
 
 export const Router = () => {
@@ -33,7 +33,7 @@ export const Router = () => {
           case PagePaths.AddNote:
             return <AddNote />;
           case PagePaths.Notes:
-            return <Notes />;
+            return <NotesList />;
           default:
             return <Content />;
         }
