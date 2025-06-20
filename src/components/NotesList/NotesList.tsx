@@ -16,7 +16,7 @@ export const NotesList = () => {
   return (
     <main className={styles.main}>
       <ul className={styles.container}>
-        {notes.map(({ id, date, emoji, image, tags, text, title }) => <NotesItem key={id} id={id} date={date} emoji={emoji} image={image} tags={tags} text={text} title={title} />)}
+        {[...notes].reverse().map(({ id, date, emoji, image, tags, text, title }) => <NotesItem key={id} id={id} date={date} emoji={emoji} image={image} tags={tags} text={text} title={title} />)}
       </ul>
     </main>
   )

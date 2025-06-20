@@ -4,7 +4,6 @@ import styles from '@components/TagList/TagList.module.css'
 
 /** Расстояние между тегами */
 export const GAP = 8;
-export const PADDING = 16;
 
 export const calculateTagsFit = (
 	arr: ITag[] | undefined,
@@ -12,34 +11,42 @@ export const calculateTagsFit = (
 ) => {
 	if (!arr || arr.length === 0) {
 		return [0, 0];
-	}
+  }
 
-	let tagsContainerWidth = widthTagsWrapper;
-	let tagsCount = 0;
-	let otherTags = arr.length;
+	let usedWidth = 0;
+	let visibleCount = 0;
+	const totalTags = arr.length;
 
-	for (let i = 0; i < arr.length; i += 1) {
-		const widthTag = getElementWidth(`#${arr[i].name}`, styles.tag);
+	const remainingElementWidth = getElementWidth(`+${totalTags}`, styles.tag);
 
-		const resultWidth = widthTag + (tagsCount > 0 ? GAP : 0) + PADDING;
+	for (let i = 0; i < totalTags; i++) {
+		const tagWidth = getElementWidth(`#${arr[i].name}`, styles.tag);
+		const gapWidth = visibleCount > 0 ? GAP : 0;
+		const requiredWidth = tagWidth + gapWidth;
 
-		if (tagsContainerWidth >= resultWidth) {
-			tagsContainerWidth -= resultWidth;
-			tagsCount += 1;
-			otherTags -= 1;
+		// Первый тег всегда отображается, даже если он очень длинный
+		if (visibleCount === 0) {
+			visibleCount = 1;
+			usedWidth = tagWidth;
+			continue;
+		}
 
-			// Если это первый тег, учитываем ширину для отображения оставшихся тегов
-			if (i === 0 && otherTags > 0) {
-				tagsContainerWidth -= getElementWidth(`+${otherTags}`, styles.tag);
-			}
+		const isLastTag = i === totalTags - 1;
+		let totalRequired = usedWidth + requiredWidth;
+		
+		// Для всех тегов, кроме последнего, учитываем место под элемент оставшихся
+		if (!isLastTag) {
+			totalRequired += remainingElementWidth;
+		}
+
+		if (totalRequired <= widthTagsWrapper) {
+			visibleCount++;
+			usedWidth += requiredWidth;
 		} else {
-			// Если первый тег не помещается, возвращаем 1 и количество оставшихся
-			if (i === 0) {
-				return [1, otherTags - 1];
-			}
 			break;
 		}
 	}
 
-	return [tagsCount, otherTags];
+	const remainingCount = totalTags - visibleCount;
+	return [visibleCount, remainingCount];
 };

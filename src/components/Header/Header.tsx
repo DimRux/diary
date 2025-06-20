@@ -9,6 +9,7 @@ import { PagePaths } from '@data/pagePaths';
 export const Header: FC = () => {
   const dispatch = useAppDispatch();
   const { path } = useAppSelector((state) => state.routersSlice);
+  const notes = useAppSelector((state) => state.notes.notes);
 
   const addNote = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
@@ -17,7 +18,7 @@ export const Header: FC = () => {
 
   const getHome = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    dispatch(navigateTo(PagePaths.Home));
+    dispatch(navigateTo(notes.length === 0 ? PagePaths.Home : PagePaths.Notes));
   }
 
   return (

@@ -12,7 +12,6 @@ export const App: FC = () => {
 
   useEffect(() => {
     const storedNotes = loadFromLocalStorage('notes') || MOCK_NOTES;
-    console.log('Store при старте приложения:', storedNotes);
     dispatch(loadNotes(storedNotes));
   }, [dispatch]);
 

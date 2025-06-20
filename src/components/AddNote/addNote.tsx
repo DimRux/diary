@@ -92,8 +92,6 @@ export const AddNote: FC = () => {
       image: activeTheme === Theme ? '' : activeTheme,
     };
 
-    console.log('Созданная заметка:',note);
-
     dispatch(addNote(note));
     const resultNote = loadFromLocalStorage('notes') || [];
     resultNote.push(note);
@@ -128,8 +126,6 @@ export const AddNote: FC = () => {
       tags: activeTags,
       image: activeTheme === Theme ? '' : activeTheme,
     } as INote;
-
-    console.log('Обновленная заметка:',note);
 
     dispatch(updateNote({ id: note.id, note}));
     const resultNotes = loadFromLocalStorage('notes') || [];

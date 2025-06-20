@@ -37,7 +37,7 @@ export const notesSlice = createSlice({
       if (index !== -1) {
         state.notes[index] = note;
       } else {
-        console.log('Заметка с таким id не найдена');
+        console.error('Заметка с таким id не найдена');
       }
     },
     loadNotes: (state, action: PayloadAction<INote[]>) => {
